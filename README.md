@@ -1,3 +1,4 @@
 # Hospet
-Projeto da disciplina de Empreendedorismo e Software.
-A ideia é desenvolver um aplicativo android para gerenciar hospedagem de animais de estimação entre usuários.
+@version 0.1
+Projeto da disciplina de Empreendedorismo em Software, desenvolvido por alunos de Computação e Design, da UFCG.
+O objetivo do aplicativo é gerenciar e facilitar a hospedagem de animais de estimação entre usuários.
