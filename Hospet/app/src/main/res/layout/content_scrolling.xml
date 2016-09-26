@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:text="reservar"
                 android:id="@+id/button"
-                android:drawableLeft="@drawable/ic_like"
+                android:src="@drawable/login_cat"
                 android:drawablePadding="6dp"
                 android:gravity="left|center"
                 android:layout_alignParentTop="true"
