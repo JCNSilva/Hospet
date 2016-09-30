@@ -22,10 +22,12 @@ import android.view.MenuItem;
 
 import br.ufcg.edu.empsoft.hospet.R;
 import br.ufcg.edu.empsoft.hospet.fragments.ProfileFragment;
+import br.ufcg.edu.empsoft.hospet.fragments.SignupFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ProfileFragment profileFragment;
+    private SignupFragment signupFragment;
     private FragmentManager fragmentManager;
     public static final String PROFILE_TAG = "PROFILE_TAG";
     @Override
@@ -51,12 +53,13 @@ public class MainActivity extends AppCompatActivity
 
     private void setUpFragments() {
         profileFragment = new ProfileFragment();
+        signupFragment = new SignupFragment();
 
         //lastFragment = R.id.nav_map;
 
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-       fragmentTransaction.replace(R.id.fragment_container, profileFragment, PROFILE_TAG);
+       fragmentTransaction.replace(R.id.fragment_container, signupFragment, PROFILE_TAG);
         fragmentTransaction.commit();
     }
 

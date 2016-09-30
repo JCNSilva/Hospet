@@ -6,6 +6,7 @@
     <color name="branco">#FFFFFF</color>
     <color name="preto">#000000</color>
     <color name="laranja">#fb9801</color>
+    <color name="mostarda">#e4e500</color>
     <color name="background">#e5e5e5</color>
     <color name="azul_escuro">#2f1977</color>
 </resources>

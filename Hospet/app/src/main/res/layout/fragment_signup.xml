@@ -1,137 +1,189 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    android:background="@color/background"
     tools:context="br.ufcg.edu.empsoft.hospet.fragments.SignupFragment">
 
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText" />
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="match_parent">
 
         <EditText
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:hint="@string/nome_dono"
+            android:background="@color/branco"
             android:ems="10"
-            android:id="@+id/editText4"
-            android:layout_weight=".5"/>
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/editText5"
-            android:layout_weight=".5" />
-    </LinearLayout>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText7" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText6" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/editText2"
-            android:layout_weight=".5" />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/editText3"
-            android:layout_weight=".5" />
-    </LinearLayout>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText8"
-        android:minLines="7"
-        android:maxLines="12" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+            android:id="@+id/et_nome_dono" />
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".5">
+            android:layout_gravity="center_horizontal" >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/textView8" />
+                android:inputType="textPersonName"
+                android:hint="@string/estado_dono"
+                android:background="@color/branco"
+                android:ems="10"
+                android:id="@+id/et_estado_dono"
+                android:layout_weight=".5" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton" />
+                android:inputType="textPersonName"
+                android:hint="@string/cidade_dono"
+                android:background="@color/branco"
+                android:ems="10"
+                android:id="@+id/et_cidade_dono"
+                android:layout_weight=".5" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/endereco_dono"
+            android:background="@color/branco"
+            android:ems="10"
+            android:id="@+id/et_endereco_dono" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/nome_animal"
+            android:background="@color/branco"
+            android:ems="10"
+            android:id="@+id/et_nome_animal" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/tipo_animal"
+                android:background="@color/branco"
+                android:ems="10"
+                android:id="@+id/et_tipo_animal"
+                android:layout_weight=".5" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/raca_animal"
+                android:background="@color/branco"
+                android:ems="10"
+                android:id="@+id/et_raca_animal"
+                android:layout_weight=".5" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="@string/add_info"
+            android:ems="10"
+            android:id="@+id/et_info_animal"
+            android:background="@color/branco"
+            android:minLines="7"
+            android:maxLines="12" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/branco">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:hint="@string/add_foto_perfil"
+                    android:id="@+id/tv_foto_perfil" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/plus"
+                    android:id="@+id/ib_foto_perfil" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/add_foto_galeria"
+                    android:id="@+id/tv_foto_galeria" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ib_foto_galeria" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_foto1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_foto2" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_foto3" />
+                </TableLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/branco">
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/textView9" />
-
-            <GridView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/gridView" />
+                android:text="@string/efetuar_cadastro"
+                android:id="@+id/btn_concluir_cadastro"
+                android:background="@color/mostarda"/>
         </LinearLayout>
     </LinearLayout>
+</ScrollView>
 
-</LinearLayout>

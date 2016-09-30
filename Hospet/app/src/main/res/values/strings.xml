@@ -11,7 +11,18 @@
     <string name="btn_buscar_hospedagem">Buscar Hospedagem</string>
     <string name="btn_oferecer_hospedagem">Oferecer Hospedagem</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_fragment_cadastro">Cadastro</string>
+    <string name="nome_dono">Nome do dono</string>
+    <string name="estado_dono">Estado</string>
+    <string name="cidade_dono">Cidade</string>
+    <string name="endereco_dono">Endereço</string>
+    <string name="nome_animal">Nome do animal</string>
+    <string name="tipo_animal">Tipo</string>
+    <string name="raca_animal">Raça</string>
+    <string name="add_info">Informações sobre seu animal</string>
+    <string name="add_foto_perfil">Adicionar foto de perfil</string>
+    <string name="add_foto_galeria">Adicionar à sua galeria</string>
+    <string name="efetuar_cadastro">Efetuar Cadastro</string>
+
 
 </resources>
