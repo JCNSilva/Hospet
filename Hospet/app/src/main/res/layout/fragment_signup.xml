@@ -1,305 +1,319 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/scrollView"
-    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:adjustViewBounds="true"
     tools:context="br.ufcg.edu.empsoft.hospet.fragments.SignupFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:background="@color/background"
+        android:fillViewport="true">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/margem_externa"
-            android:layout_marginLeft="@dimen/margem_externa"
-            android:layout_marginRight="@dimen/margem_externa" >
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/altura_campo"
-                android:inputType="textPersonName"
-                android:hint="@string/nome_dono"
-                android:background="@color/branco"
-                android:ems="10"
-                android:id="@+id/et_nome_dono"
-                android:paddingLeft="@dimen/enchimento_v_campo"/>
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" >
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margem_externa"
+                android:layout_marginLeft="@dimen/margem_externa"
+                android:layout_marginRight="@dimen/margem_externa" >
 
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/altura_campo"
                     android:inputType="textPersonName"
-                    android:hint="@string/estado_dono"
+                    android:hint="@string/nome_dono"
                     android:background="@color/branco"
                     android:ems="10"
-                    android:id="@+id/et_estado_dono"
-                    android:layout_weight=".5"
-                    android:layout_marginTop="@dimen/margem_interna"
+                    android:id="@+id/et_nome_dono"
                     android:paddingLeft="@dimen/enchimento_v_campo"/>
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/altura_campo"
-                    android:inputType="textPersonName"
-                    android:hint="@string/cidade_dono"
-                    android:background="@color/branco"
-                    android:ems="10"
-                    android:id="@+id/et_cidade_dono"
-                    android:layout_weight=".5"
-                    android:layout_marginTop="@dimen/margem_interna"
-                    android:layout_marginLeft="@dimen/margem_interna"
-                    android:paddingLeft="@dimen/enchimento_v_campo"/>
-            </LinearLayout>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/altura_campo"
-                android:inputType="textPersonName"
-                android:hint="@string/endereco_dono"
-                android:background="@color/branco"
-                android:ems="10"
-                android:id="@+id/et_endereco_dono"
-                android:layout_marginTop="@dimen/margem_interna"
-                android:paddingLeft="@dimen/enchimento_v_campo" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/altura_campo"
-                android:inputType="textPersonName"
-                android:hint="@string/nome_animal"
-                android:background="@color/branco"
-                android:ems="10"
-                android:id="@+id/et_nome_animal"
-                android:layout_marginTop="@dimen/margem_interna"
-                android:paddingLeft="@dimen/enchimento_v_campo" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" >
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/altura_campo"
-                    android:inputType="textPersonName"
-                    android:hint="@string/tipo_animal"
-                    android:background="@color/branco"
-                    android:ems="10"
-                    android:id="@+id/et_tipo_animal"
-                    android:layout_weight=".5"
-                    android:layout_marginTop="@dimen/margem_interna"
-                    android:paddingLeft="@dimen/enchimento_v_campo" />
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/altura_campo"
-                    android:inputType="textPersonName"
-                    android:hint="@string/raca_animal"
-                    android:background="@color/branco"
-                    android:ems="10"
-                    android:id="@+id/et_raca_animal"
-                    android:layout_weight=".5"
-                    android:layout_marginTop="@dimen/margem_interna"
-                    android:layout_marginLeft="@dimen/margem_interna"
-                    android:paddingLeft="@dimen/enchimento_v_campo" />
-            </LinearLayout>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/altura_campo_grande"
-                android:inputType="textMultiLine"
-                android:hint="@string/add_info"
-                android:gravity="start"
-                android:ems="10"
-                android:id="@+id/et_info_animal"
-                android:background="@color/branco"
-                android:layout_marginTop="@dimen/margem_interna"
-                android:paddingLeft="@dimen/enchimento_v_campo"
-                android:paddingTop="@dimen/enchimento_v_campo"/>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/altura_campo_galeria"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/branco"
-                android:layout_marginTop="@dimen/margem_externa">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".5"
-                    android:layout_marginLeft="@dimen/margem_externa"
-                    android:layout_marginTop="@dimen/margem_externa"
-                    android:layout_marginBottom="@dimen/margem_externa">
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" >
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@string/add_foto_perfil"
-                        android:textAlignment="center"
-                        android:id="@+id/tv_foto_perfil"
-                        android:layout_marginBottom="5dp"/>
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/altura_campo"
+                        android:inputType="textPersonName"
+                        android:hint="@string/estado_dono"
+                        android:background="@color/branco"
+                        android:ems="10"
+                        android:id="@+id/et_estado_dono"
+                        android:layout_weight=".5"
+                        android:layout_marginTop="@dimen/margem_interna"
+                        android:paddingLeft="@dimen/enchimento_v_campo"/>
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/background2">
-
-                        <ImageButton
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:background="@drawable/plus"
-                            android:id="@+id/ib_foto_perfil"/>
-                    </FrameLayout>
-
-
-
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/altura_campo"
+                        android:inputType="textPersonName"
+                        android:hint="@string/cidade_dono"
+                        android:background="@color/branco"
+                        android:ems="10"
+                        android:id="@+id/et_cidade_dono"
+                        android:layout_weight=".5"
+                        android:layout_marginTop="@dimen/margem_interna"
+                        android:layout_marginLeft="@dimen/margem_interna"
+                        android:paddingLeft="@dimen/enchimento_v_campo"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".5"
-                    android:layout_marginLeft="@dimen/margem_interna"
-                    android:layout_marginTop="@dimen/margem_externa"
-                    android:layout_marginBottom="@dimen/margem_externa"
-                    android:layout_marginRight="@dimen/margem_externa">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/altura_campo"
+                    android:inputType="textPersonName"
+                    android:hint="@string/endereco_dono"
+                    android:background="@color/branco"
+                    android:ems="10"
+                    android:id="@+id/et_endereco_dono"
+                    android:layout_marginTop="@dimen/margem_interna"
+                    android:paddingLeft="@dimen/enchimento_v_campo" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@string/add_foto_galeria"
-                        android:textAlignment="center"
-                        android:id="@+id/tv_foto_galeria"
-                        android:layout_marginBottom="5dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/altura_campo"
+                    android:inputType="textPersonName"
+                    android:hint="@string/nome_animal"
+                    android:background="@color/branco"
+                    android:ems="10"
+                    android:id="@+id/et_nome_animal"
+                    android:layout_marginTop="@dimen/margem_interna"
+                    android:paddingLeft="@dimen/enchimento_v_campo" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" >
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/altura_campo"
+                        android:inputType="textPersonName"
+                        android:hint="@string/tipo_animal"
+                        android:background="@color/branco"
+                        android:ems="10"
+                        android:id="@+id/et_tipo_animal"
+                        android:layout_weight=".5"
+                        android:layout_marginTop="@dimen/margem_interna"
+                        android:paddingLeft="@dimen/enchimento_v_campo" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/altura_campo"
+                        android:inputType="textPersonName"
+                        android:hint="@string/raca_animal"
+                        android:background="@color/branco"
+                        android:ems="10"
+                        android:id="@+id/et_raca_animal"
+                        android:layout_weight=".5"
+                        android:layout_marginTop="@dimen/margem_interna"
+                        android:layout_marginLeft="@dimen/margem_interna"
+                        android:paddingLeft="@dimen/enchimento_v_campo" />
+                </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/altura_campo_grande"
+                    android:inputType="textMultiLine"
+                    android:hint="@string/add_info"
+                    android:gravity="start"
+                    android:ems="10"
+                    android:id="@+id/et_info_animal"
+                    android:background="@color/branco"
+                    android:layout_marginTop="@dimen/margem_interna"
+                    android:paddingLeft="@dimen/enchimento_v_campo"
+                    android:paddingTop="@dimen/enchimento_v_campo"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/altura_campo_galeria"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/branco"
+                    android:layout_marginTop="@dimen/margem_externa">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@color/branco">
+                        android:layout_weight=".5"
+                        android:layout_marginLeft="@dimen/margem_externa"
+                        android:layout_marginTop="@dimen/margem_externa"
+                        android:layout_marginBottom="@dimen/margem_externa">
 
-                        <LinearLayout
-                            android:orientation="vertical"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/add_foto_perfil"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:id="@+id/tv_foto_perfil"
+                            android:layout_marginBottom="5dp"/>
+
+                        <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight=".5">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/background2"
-                                android:layout_weight=".5"
-                                android:layout_marginRight="1dp"
-                                android:layout_marginBottom="1dp">
+                            android:background="@color/background2">
 
                             <ImageButton
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/ib_foto_galeria"
-                                android:background="@drawable/plus"/>
-                            </FrameLayout>
+                                android:layout_gravity="center"
+                                android:background="@drawable/plus"
+                                android:id="@+id/ib_foto_perfil"
+                                android:scaleType="fitXY"/>
+                        </FrameLayout>
 
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/background2"
-                                android:layout_weight=".5"
-                                android:layout_marginRight="1dp"
-                                android:layout_marginTop="1dp">
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:id="@+id/iv_foto1"
-                                android:background="@drawable/plus"/>
-                            </FrameLayout>
 
-                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:layout_marginLeft="@dimen/margem_interna"
+                        android:layout_marginTop="@dimen/margem_externa"
+                        android:layout_marginBottom="@dimen/margem_externa"
+                        android:layout_marginRight="@dimen/margem_externa">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/add_foto_galeria"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:id="@+id/tv_foto_galeria"
+                            android:layout_marginBottom="5dp" />
 
                         <LinearLayout
-                            android:orientation="vertical"
+                            android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight=".5">
+                            android:background="@color/branco">
 
-                            <FrameLayout
+                            <LinearLayout
+                                android:orientation="vertical"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="@color/background2"
-                                android:layout_weight=".5"
-                                android:layout_marginLeft="1dp"
-                                android:layout_marginBottom="1dp">
+                                android:layout_weight=".5">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/background2"
+                                    android:layout_weight=".5"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginBottom="1dp">
+
+                                <ImageButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/ib_foto_galeria"
+                                    android:background="@drawable/plus"
+                                    android:scaleType="fitXY"/>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/background2"
+                                    android:layout_weight=".5"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginTop="1dp">
 
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/iv_foto2"
-                                    android:background="@drawable/plus" />
-                            </FrameLayout>
+                                    android:id="@+id/iv_foto1"
+                                    android:background="@drawable/plus"
+                                    android:scaleType="fitXY"/>
+                                </FrameLayout>
 
-                            <FrameLayout
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="@color/background2"
-                                android:layout_weight=".5"
-                                android:layout_marginLeft="1dp"
-                                android:layout_marginTop="1dp">
+                                android:layout_weight=".5">
 
-                                <ImageView
+                                <FrameLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/iv_foto3"
-                                    android:background="@drawable/plus"/>
-                            </FrameLayout>
+                                    android:background="@color/background2"
+                                    android:layout_weight=".5"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginBottom="1dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/iv_foto2"
+                                        android:background="@drawable/plus"
+                                        android:scaleType="fitXY" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/background2"
+                                    android:layout_weight=".5"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="1dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/iv_foto3"
+                                        android:background="@drawable/plus"
+                                        android:scaleType="fitXY"/>
+                                </FrameLayout>
+
+                            </LinearLayout>
 
                         </LinearLayout>
-
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/branco"
+                android:layout_marginTop="@dimen/margem_externa"
+                android:layout_marginBottom="@dimen/margem_externa">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/efetuar_cadastro"
+                    android:textAllCaps="false"
+                    android:id="@+id/btn_concluir_cadastro"
+                    android:background="@color/mostarda"
+                    android:paddingLeft="@dimen/enchimento_v_botao"
+                    android:paddingRight="@dimen/enchimento_v_botao"
+                    android:paddingTop="@dimen/enchimento_h_botao"
+                    android:paddingBottom="@dimen/enchimento_h_botao"
+                    android:layout_marginTop="@dimen/margem_interna"
+                    android:layout_marginBottom="@dimen/margem_interna"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"/>
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/branco"
-            android:layout_marginTop="@dimen/margem_externa"
-            android:layout_marginBottom="@dimen/margem_externa">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/efetuar_cadastro"
-                android:textAllCaps="false"
-                android:id="@+id/btn_concluir_cadastro"
-                android:background="@color/mostarda"
-                android:paddingLeft="@dimen/enchimento_v_botao"
-                android:paddingRight="@dimen/enchimento_v_botao"
-                android:paddingTop="@dimen/enchimento_h_botao"
-                android:paddingBottom="@dimen/enchimento_h_botao"
-                android:layout_marginTop="@dimen/margem_interna"
-                android:layout_marginBottom="@dimen/margem_interna"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
-
+    </ScrollView>
+</RelativeLayout>
