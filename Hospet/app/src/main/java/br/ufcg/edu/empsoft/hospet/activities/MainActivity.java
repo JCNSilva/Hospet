@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         //Modifica fonte
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+       CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/century-gothic.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
@@ -124,26 +124,30 @@ public class MainActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.nav_camera:
+
                 break;
             case R.id.nav_gallery:
-                startActivity(new Intent(MainActivity.this, ProfileScrollingActivity.class));
+                startActivity(new Intent(getApplicationContext(), ProfileScrollingActivity.class));
                 break;
             case R.id.nav_slideshow:
-
+                fragmentTransaction.replace(R.id.fragment_container, signupFragment, PROFILE_TAG);
+                fragmentTransaction.commit();
                 break;
             case R.id.nav_manage:
 
                 break;
             case R.id.nav_share:
+
                 break;
             case R.id.nav_send:
+
+                break;
 
 
             default:
                 break;
 
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

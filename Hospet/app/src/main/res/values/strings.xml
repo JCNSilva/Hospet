@@ -24,5 +24,6 @@
     <string name="add_foto_galeria">Adicionar em sua galeria</string>
     <string name="efetuar_cadastro">Efetuar Cadastro</string>
 
+    <string name="carregando">Carregando..</string>
 
 </resources>

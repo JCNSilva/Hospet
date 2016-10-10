@@ -21,50 +21,41 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:id="@+id/linearLayout"
         android:layout_below="@+id/linearLayout2" >
 
         <ImageView
-            android:layout_width="201dp"
-            android:layout_height="269dp"
+            android:layout_width="160dp"
+            android:layout_height="240dp"
             android:id="@+id/logo"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/ic_logo_hospet" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_logo_hospet"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/button_layout"
+            android:id="@+id/progress_layout"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/linearLayout">
+            android:layout_below="@+id/linearLayout"
+            android:weightSum="1">
 
-            <Button
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:text="@string/btn_oferecer_hospedagem"
-                android:id="@+id/btn_oferecer_hospedagem"
-                android:layout_below="@+id/btn_buscar_hospedagem"
-                android:layout_margin="20dp"
-                android:visibility="visible"
-                android:background="@color/cardview_light_background"
-                android:textColor="@android:color/black"
-                android:elevation="5dp"
-                android:typeface="monospace" />
-
-            <Button
-                android:id="@+id/btn_buscar_hospedagem"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:visibility="visible"
-                android:text="@string/btn_buscar_hospedagem"
-                android:textColor="@android:color/black"
-
-                android:layout_margin="20dp"
-                android:background="@color/cardview_light_background"
-                android:typeface="monospace" />
+            <ProgressBar
+                android:id="@+id/pbHeaderProgress"
+                style="@android:style/Widget.ProgressBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carregando"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/pbHeaderProgress"
+                android:textColor="@color/branco" />
 
         </LinearLayout>
 

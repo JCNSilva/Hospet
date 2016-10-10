@@ -170,7 +170,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:background="@drawable/plus"
+                                android:background="@drawable/ic_logo_hospet"
                                 android:id="@+id/ib_foto_perfil"
                                 android:scaleType="fitXY"/>
                         </FrameLayout>
@@ -223,7 +223,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/ib_foto_galeria"
-                                    android:background="@drawable/plus"
+                                    android:background="@drawable/ic_logo_hospet"
                                     android:scaleType="fitXY"/>
                                 </FrameLayout>
 
@@ -239,7 +239,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/iv_foto1"
-                                    android:background="@drawable/plus"
+                                    android:background="@drawable/ic_logo_hospet"
                                     android:scaleType="fitXY"/>
                                 </FrameLayout>
 
@@ -263,7 +263,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:id="@+id/iv_foto2"
-                                        android:background="@drawable/plus"
+                                        android:background="@drawable/ic_logo_hospet"
                                         android:scaleType="fitXY" />
                                 </FrameLayout>
 
@@ -279,7 +279,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:id="@+id/iv_foto3"
-                                        android:background="@drawable/plus"
+                                        android:background="@drawable/ic_logo_hospet"
                                         android:scaleType="fitXY"/>
                                 </FrameLayout>
 
