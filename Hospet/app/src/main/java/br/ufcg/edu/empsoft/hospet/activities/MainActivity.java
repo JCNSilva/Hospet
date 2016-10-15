@@ -1,17 +1,9 @@
 package br.ufcg.edu.empsoft.hospet.activities;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -21,12 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import br.ufcg.edu.empsoft.hospet.FilterFragment;
+import br.ufcg.edu.empsoft.hospet.fragments.FilterFragment;
 import br.ufcg.edu.empsoft.hospet.R;
 import br.ufcg.edu.empsoft.hospet.fragments.ProfileFragment;
 import br.ufcg.edu.empsoft.hospet.fragments.SignupFragment;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -137,7 +127,8 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction.commit();
                 break;
             case R.id.nav_manage:
-
+                fragmentTransaction.replace(R.id.fragment_container, filterFragment, PROFILE_TAG);
+                fragmentTransaction.commit();
                 break;
             case R.id.nav_share:
 

@@ -1,16 +1,21 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.ufcg.edu.empsoft.hospet.FilterFragment">
-
+    tools:context=".fragments.FilterFragment">
 
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_filtro"
+        android:layout_marginRight="@dimen/margem_filtro"
+        android:layout_marginTop="@dimen/margem_externa"
+        android:layout_marginBottom="@dimen/margem_externa"
+        android:paddingBottom="36dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -35,35 +40,43 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margem_filtro"
+            android:layout_marginBottom="@dimen/margem_filtro">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="01/01/2001"
+                android:id="@+id/et_data_inicio"
+                android:focusable="false"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=""
-                android:id="@+id/tv_data_inicio"/>
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="até"
+                android:textColor="@color/preto"
+                android:id="@+id/textView9"
+                android:layout_marginLeft="@dimen/margem_filtro"
+                android:layout_marginRight="@dimen/margem_filtro"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=" até "
-                android:id="@+id/textView9" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=""
-                android:id="@+id/tv_data_final"/>
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="10/10/2010"
+                android:id="@+id/et_data_final"
+                android:focusable="false"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem_filtro">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -80,15 +93,25 @@
                 android:layout_marginTop="@dimen/margem_filtro" />
         </LinearLayout>
 
-        <Spinner
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner" />
+            android:paddingLeft="@dimen/margem_filtro"
+            android:paddingRight="@dimen/margem_filtro"
+            android:layout_marginBottom="@dimen/margem_filtro">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/enchimento_v_botao"
+                android:id="@+id/spinner_filtros" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem_filtro">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -162,7 +185,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem_filtro">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -183,7 +207,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margem_filtro">
 
             <CheckedTextView
                 android:layout_width="wrap_content"
@@ -191,8 +216,11 @@
                 android:text="@string/casa"
                 android:id="@+id/ctv_casa"
                 android:checked="false"
-                android:drawableLeft="@drawable/ic_home_button"
-                android:background="@color/tag_background"/>
+                android:background="@color/tag_background"
+                android:layout_marginLeft="@dimen/margem_filtro"
+                android:layout_marginTop="@dimen/margem_filtro"
+                android:layout_marginBottom="@dimen/margem_filtro"
+                android:padding="@dimen/enchimento_filtro" />
 
             <CheckedTextView
                 android:layout_width="wrap_content"
@@ -200,14 +228,18 @@
                 android:text="@string/apartamento"
                 android:id="@+id/ctv_apartamento"
                 android:checked="false"
-                android:drawableLeft="@drawable/ic_old_building"
-                android:background="@color/tag_background"/>
+                android:background="@color/tag_background"
+                android:layout_marginLeft="@dimen/margem_filtro"
+                android:layout_marginTop="@dimen/margem_filtro"
+                android:layout_marginBottom="@dimen/margem_filtro"
+                android:padding="@dimen/enchimento_filtro"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem_filtro">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -227,7 +259,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/margem_filtro">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -240,8 +273,11 @@
                     android:text="@string/dinheiro"
                     android:id="@+id/ctv_dinheiro"
                     android:checked="false"
-                    android:drawableLeft="@drawable/ic_cash"
-                    android:background="@color/tag_background"/>
+                    android:background="@color/tag_background"
+                    android:layout_marginLeft="@dimen/margem_filtro"
+                    android:layout_marginTop="@dimen/margem_filtro"
+                    android:layout_marginBottom="@dimen/margem_filtro"
+                    android:padding="@dimen/enchimento_filtro"/>
 
                 <CheckedTextView
                     android:layout_width="wrap_content"
@@ -249,8 +285,11 @@
                     android:text="@string/debito"
                     android:id="@+id/ctv_debito"
                     android:checked="false"
-                    android:drawableLeft="@drawable/ic_credit_card"
-                    android:background="@color/tag_background"/>
+                    android:background="@color/tag_background"
+                    android:layout_marginLeft="@dimen/margem_filtro"
+                    android:layout_marginTop="@dimen/margem_filtro"
+                    android:layout_marginBottom="@dimen/margem_filtro"
+                    android:padding="@dimen/enchimento_filtro"/>
 
             </LinearLayout>
 
@@ -262,20 +301,24 @@
                 <CheckedTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/paypal"
-                    android:id="@+id/ctv_paypal"
+                    android:text="@string/credito"
+                    android:id="@+id/ctv_credito"
                     android:checked="false"
-                    android:drawableLeft="@drawable/ic_paypal"
-                    android:background="@color/tag_background"/>
+                    android:background="@color/tag_background"
+                    android:layout_marginLeft="@dimen/margem_filtro"
+                    android:layout_marginBottom="@dimen/margem_filtro"
+                    android:padding="@dimen/enchimento_filtro"/>
 
                 <CheckedTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/credito"
-                    android:id="@+id/ctv_credito"
+                    android:text="@string/paypal"
+                    android:id="@+id/ctv_paypal"
                     android:checked="false"
-                    android:drawableLeft="@drawable/ic_credit_card"
-                    android:background="@color/tag_background"/>
+                    android:background="@color/tag_background"
+                    android:layout_marginLeft="@dimen/margem_filtro"
+                    android:layout_marginBottom="@dimen/margem_filtro"
+                    android:padding="@dimen/enchimento_filtro"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -285,7 +328,15 @@
             android:layout_height="wrap_content"
             android:text="@string/filtrar"
             android:id="@+id/button2"
-            android:background="@color/mostarda2"/>
+            android:background="@color/mostarda2"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/enchimento_v_botao"
+            android:paddingRight="@dimen/enchimento_v_botao"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margem_externa"
+            android:layout_marginBottom="@dimen/margem_filtro"/>
 
 
     </LinearLayout>
