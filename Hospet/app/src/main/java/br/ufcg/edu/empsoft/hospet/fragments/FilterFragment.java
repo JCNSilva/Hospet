@@ -11,6 +11,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
 import android.widget.DatePicker;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+
+import br.ufcg.edu.empsoft.hospet.models.ConstantesFiltro;
 
 import br.ufcg.edu.empsoft.hospet.R;
 
@@ -43,6 +46,10 @@ public class FilterFragment extends Fragment {
 
     private Calendar dataInicio;
     private Calendar dataFinal;
+    private ConstantesFiltro.TipoAnimal tipoAnimal;
+    private ConstantesFiltro.TipoLocal tipoLocal;
+    private ConstantesFiltro.TipoOrdenacao tipoOrdenacao;
+    private ConstantesFiltro.TipoPagamento tipoPagamento;
 
     public FilterFragment() {
         // Required empty public constructor
@@ -85,6 +92,7 @@ public class FilterFragment extends Fragment {
                 ctvAve.setChecked(false);
                 ctvTartaruga.setChecked(false);
                 updateBoxes();
+                tipoAnimal = ConstantesFiltro.TipoAnimal.CACHORRO;
             }
         });
 
@@ -96,6 +104,7 @@ public class FilterFragment extends Fragment {
                 ctvAve.setChecked(false);
                 ctvTartaruga.setChecked(false);
                 updateBoxes();
+                tipoAnimal = ConstantesFiltro.TipoAnimal.GATO;
             }
         });
 
@@ -107,6 +116,7 @@ public class FilterFragment extends Fragment {
                 ctvAve.toggle();
                 ctvTartaruga.setChecked(false);
                 updateBoxes();
+                tipoAnimal = ConstantesFiltro.TipoAnimal.AVE;
             }
         });
 
@@ -118,6 +128,7 @@ public class FilterFragment extends Fragment {
                 ctvAve.setChecked(false);
                 ctvTartaruga.toggle();
                 updateBoxes();
+                tipoAnimal = ConstantesFiltro.TipoAnimal.TARTARUGA;
             }
         });
 
@@ -127,6 +138,7 @@ public class FilterFragment extends Fragment {
                 ctvCasa.toggle();
                 ctvApartamento.setChecked(false);
                 updateBoxes();
+                tipoLocal = ConstantesFiltro.TipoLocal.CASA;
             }
         });
 
@@ -138,6 +150,7 @@ public class FilterFragment extends Fragment {
                 ctvCasa.setChecked(false);
                 ctvApartamento.toggle();
                 updateBoxes();
+                tipoLocal = ConstantesFiltro.TipoLocal.APARTAMENTO;
             }
         });
 
@@ -151,6 +164,7 @@ public class FilterFragment extends Fragment {
                 ctvPaypal.setChecked(false);
                 ctvDinheiro.setChecked(false);
                 updateBoxes();
+                tipoPagamento = ConstantesFiltro.TipoPagamento.CREDITO;
             }
         });
 
@@ -164,6 +178,7 @@ public class FilterFragment extends Fragment {
                 ctvPaypal.setChecked(false);
                 ctvDinheiro.setChecked(false);
                 updateBoxes();
+                tipoPagamento = ConstantesFiltro.TipoPagamento.DEBITO;
             }
         });
 
@@ -177,6 +192,7 @@ public class FilterFragment extends Fragment {
                 ctvPaypal.toggle();
                 ctvDinheiro.setChecked(false);
                 updateBoxes();
+                tipoPagamento = ConstantesFiltro.TipoPagamento.PAYPAL;
             }
         });
 
@@ -190,6 +206,7 @@ public class FilterFragment extends Fragment {
                 ctvPaypal.setChecked(false);
                 ctvDinheiro.toggle();
                 updateBoxes();
+                tipoPagamento = ConstantesFiltro.TipoPagamento.DINHEIRO;
             }
         });
 
@@ -245,6 +262,23 @@ public class FilterFragment extends Fragment {
                 android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filtros.setAdapter(adapter);
+
+        filtros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
+                switch(index){
+                    case 0:
+                        tipoOrdenacao = ConstantesFiltro.TipoOrdenacao.NOTA;
+                        break;
+                    case 1:
+                        tipoOrdenacao = ConstantesFiltro.TipoOrdenacao.PRECO;
+                        break;
+                    case 2:
+                        tipoOrdenacao = ConstantesFiltro.TipoOrdenacao.PROXIMIDADE;
+                        break;
+                }
+            }
+        });
 
         return mView;
     }
