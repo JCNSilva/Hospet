@@ -1,0 +1,293 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.ufcg.edu.empsoft.hospet.FilterFragment">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/ic_daily_calendar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/duracao"
+                android:id="@+id/textView2"
+                android:layout_marginTop="@dimen/margem_filtro"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text=""
+                android:id="@+id/tv_data_inicio"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text=" até "
+                android:id="@+id/textView9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text=""
+                android:id="@+id/tv_data_final"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView6"
+                android:src="@drawable/ic_filter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/organizar"
+                android:id="@+id/textView10"
+                android:layout_marginTop="@dimen/margem_filtro" />
+        </LinearLayout>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@drawable/ic_love" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/animais"
+                android:id="@+id/textView11"
+                android:layout_marginTop="@dimen/margem_filtro" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margem_filtro">
+
+            <CheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cachorro"
+                android:id="@+id/ctv_cachorro"
+                android:background="@color/tag_background"
+                android:layout_marginLeft="@dimen/margem_filtro"
+                android:layout_marginTop="@dimen/margem_filtro"
+                android:layout_marginBottom="@dimen/margem_filtro"
+                android:padding="@dimen/enchimento_filtro"/>
+
+            <CheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gato"
+                android:id="@+id/ctv_gato"
+                android:checked="false"
+                android:background="@color/tag_background"
+                android:layout_marginLeft="@dimen/margem_filtro"
+                android:layout_marginTop="@dimen/margem_filtro"
+                android:layout_marginBottom="@dimen/margem_filtro"
+                android:padding="@dimen/enchimento_filtro"/>
+
+            <CheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ave"
+                android:id="@+id/ctv_ave"
+                android:checked="false"
+                android:background="@color/tag_background"
+                android:layout_marginLeft="@dimen/margem_filtro"
+                android:layout_marginTop="@dimen/margem_filtro"
+                android:layout_marginBottom="@dimen/margem_filtro"
+                android:padding="@dimen/enchimento_filtro"/>
+
+            <CheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tartaruga"
+                android:id="@+id/ctv_tartaruga"
+                android:checked="false"
+                android:background="@color/tag_background"
+                android:layout_marginLeft="@dimen/margem_filtro"
+                android:layout_marginTop="@dimen/margem_filtro"
+                android:layout_marginBottom="@dimen/margem_filtro"
+                android:padding="@dimen/enchimento_filtro"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView4"
+                android:src="@drawable/ic_map_localization" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/ambiente"
+                android:id="@+id/textView12"
+                android:layout_marginTop="@dimen/margem_filtro"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <CheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/casa"
+                android:id="@+id/ctv_casa"
+                android:checked="false"
+                android:drawableLeft="@drawable/ic_home_button"
+                android:background="@color/tag_background"/>
+
+            <CheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/apartamento"
+                android:id="@+id/ctv_apartamento"
+                android:checked="false"
+                android:drawableLeft="@drawable/ic_old_building"
+                android:background="@color/tag_background"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@drawable/ic_credit_card" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/pagamento"
+                android:id="@+id/textView8"
+                android:layout_marginTop="@dimen/margem_filtro" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dinheiro"
+                    android:id="@+id/ctv_dinheiro"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/ic_cash"
+                    android:background="@color/tag_background"/>
+
+                <CheckedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/debito"
+                    android:id="@+id/ctv_debito"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/ic_credit_card"
+                    android:background="@color/tag_background"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <CheckedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/paypal"
+                    android:id="@+id/ctv_paypal"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/ic_paypal"
+                    android:background="@color/tag_background"/>
+
+                <CheckedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/credito"
+                    android:id="@+id/ctv_credito"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/ic_credit_card"
+                    android:background="@color/tag_background"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filtrar"
+            android:id="@+id/button2"
+            android:background="@color/mostarda2"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
