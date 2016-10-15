@@ -11,10 +11,12 @@
     <!-- Dimensoes usadas no app -->
     <dimen name="margem_externa">15dp</dimen>
     <dimen name="margem_interna">10dp</dimen>
+    <dimen name="margem_filtro">8dp</dimen>
     <dimen name="altura_campo">40dp</dimen>
     <dimen name="enchimento_v_campo">5dp</dimen>
     <dimen name="enchimento_h_botao">10dp</dimen>
     <dimen name="enchimento_v_botao">30dp</dimen>
     <dimen name="altura_campo_grande">160dp</dimen>
     <dimen name="altura_campo_galeria">220dp</dimen>
+    <dimen name="enchimento_filtro">5dp</dimen>
 </resources>

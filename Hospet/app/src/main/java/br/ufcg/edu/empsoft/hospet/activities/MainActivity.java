@@ -21,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import br.ufcg.edu.empsoft.hospet.FilterFragment;
 import br.ufcg.edu.empsoft.hospet.R;
 import br.ufcg.edu.empsoft.hospet.fragments.ProfileFragment;
 import br.ufcg.edu.empsoft.hospet.fragments.SignupFragment;
@@ -32,17 +33,18 @@ public class MainActivity extends AppCompatActivity
     private ProfileFragment profileFragment;
     private SignupFragment signupFragment;
     private FragmentManager fragmentManager;
+    private FilterFragment filterFragment;
     public static final String PROFILE_TAG = "PROFILE_TAG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Modifica fonte
+        /*//Modifica fonte
        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/century-gothic.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
-        );
+        );*/
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -62,21 +64,22 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    //Mudança necessária para customizar fontes
+    /*//Mudança necessária para customizar fontes
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
     private void setUpFragments() {
         profileFragment = new ProfileFragment();
         signupFragment = new SignupFragment();
+        filterFragment = new FilterFragment();
 
         //lastFragment = R.id.nav_map;
 
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-       fragmentTransaction.replace(R.id.fragment_container, signupFragment, PROFILE_TAG);
+        fragmentTransaction.replace(R.id.fragment_container, filterFragment, PROFILE_TAG);
         fragmentTransaction.commit();
     }
 

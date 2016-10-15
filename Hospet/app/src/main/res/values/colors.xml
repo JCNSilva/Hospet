@@ -8,6 +8,9 @@
     <color name="laranja">#fb9801</color>
     <color name="mostarda">#e4e500</color>
     <color name="background">#e5e5e5</color>
+    <color name="tag_background">#e3e3e3</color>
     <color name="azul_escuro">#2f1977</color>
     <color name="background2">#e1eafa</color>
+    <color name="mostarda2">#d9d215</color>
+    <color name="tag_selected">#d3f0d2</color>
 </resources>
