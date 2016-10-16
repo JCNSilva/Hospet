@@ -2,6 +2,7 @@ package br.ufcg.edu.empsoft.hospet.models;
 
 import android.graphics.Bitmap;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -13,19 +14,21 @@ public class Hospedeiro {
     private String nome;
     private String descricao;
     private Double precoDiaria;
-    private Date inicioDisp;
-    private Date fimDisp;
-    private Integer numEstrelas;
+    private Calendar inicioDisp;
+    private Calendar fimDisp;
+    private Double numEstrelas;
     private Integer qntCriancas;
-    private List<String> animais;
-    private String tipoCasa;
-    private List<String> tipoPagamento;
+    private List<ConstantesFiltro.TipoAnimal> animais;
+    private ConstantesFiltro.TipoLocal tipoCasa;
+    private List<ConstantesFiltro.TipoPagamento> tipoPagamento;
     private List<Bitmap> fotos;
     private Bitmap fotoDePerfil;
+    private Double distancia;
 
-    public Hospedeiro(String nome, String descricao, Double precoDiaria, Date inicioDisp,
-                      Date fimDisp, Integer qntCriancas, List<String> animais, String tipoCasa,
-                      List<String> tipoPagamento) {
+    public Hospedeiro(String nome, String descricao, Double precoDiaria, Calendar inicioDisp,
+                      Calendar fimDisp, Integer qntCriancas, List<ConstantesFiltro.TipoAnimal> animais,
+                      ConstantesFiltro.TipoLocal tipoCasa, List<ConstantesFiltro.TipoPagamento> tipoPagamento,
+                      Double distancia) {
         this.nome = nome;
         this.descricao = descricao;
         this.precoDiaria = precoDiaria;
@@ -35,6 +38,8 @@ public class Hospedeiro {
         this.animais = animais;
         this.tipoCasa = tipoCasa;
         this.tipoPagamento = tipoPagamento;
+        this.numEstrelas = 0.0;
+        this.distancia = distancia;
     }
 
     @Override
@@ -91,27 +96,27 @@ public class Hospedeiro {
         this.precoDiaria = precoDiaria;
     }
 
-    public Date getInicioDisp() {
+    public Calendar getInicioDisp() {
         return inicioDisp;
     }
 
-    public void setInicioDisp(Date inicioDisp) {
+    public void setInicioDisp(Calendar inicioDisp) {
         this.inicioDisp = inicioDisp;
     }
 
-    public Date getFimDisp() {
+    public Calendar getFimDisp() {
         return fimDisp;
     }
 
-    public void setFimDisp(Date fimDisp) {
+    public void setFimDisp(Calendar fimDisp) {
         this.fimDisp = fimDisp;
     }
 
-    public Integer getNumEstrelas() {
+    public Double getNumEstrelas() {
         return numEstrelas;
     }
 
-    public void setNumEstrelas(Integer numEstrelas) {
+    public void setNumEstrelas(Double numEstrelas) {
         this.numEstrelas = numEstrelas;
     }
 
@@ -123,27 +128,27 @@ public class Hospedeiro {
         this.qntCriancas = qntCriancas;
     }
 
-    public List<String> getAnimais() {
+    public List<ConstantesFiltro.TipoAnimal> getAnimais() {
         return animais;
     }
 
-    public void setAnimais(List<String> animais) {
+    public void setAnimais(List<ConstantesFiltro.TipoAnimal> animais) {
         this.animais = animais;
     }
 
-    public String getTipoCasa() {
+    public ConstantesFiltro.TipoLocal getTipoCasa() {
         return tipoCasa;
     }
 
-    public void setTipoCasa(String tipoCasa) {
+    public void setTipoCasa(ConstantesFiltro.TipoLocal tipoCasa) {
         this.tipoCasa = tipoCasa;
     }
 
-    public List<String> getTipoPagamento() {
+    public List<ConstantesFiltro.TipoPagamento> getTipoPagamento() {
         return tipoPagamento;
     }
 
-    public void setTipoPagamento(List<String> tipoPagamento) {
+    public void setTipoPagamento(List<ConstantesFiltro.TipoPagamento> tipoPagamento) {
         this.tipoPagamento = tipoPagamento;
     }
 
@@ -167,11 +172,19 @@ public class Hospedeiro {
         this.fotos.add(foto);
     }
 
-    public void addPagamento(String tipoPag){
+    public void addPagamento(ConstantesFiltro.TipoPagamento tipoPag){
         this.tipoPagamento.add(tipoPag);
     }
 
-    public void addAnimal(String animal){
+    public void addAnimal(ConstantesFiltro.TipoAnimal animal){
         this.animais.add(animal);
+    }
+
+    public Double getDistancia() {
+        return distancia;
+    }
+
+    public void setDistancia(Double distancia) {
+        this.distancia = distancia;
     }
 }

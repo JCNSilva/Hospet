@@ -2,100 +2,94 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="@color/branco">
 
-    <android.support.v7.widget.CardView
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="wrap_content"
-        card_view:cardCornerRadius="4dp">
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="70dp"
+        android:layout_height="70dp">
+
+        <ImageView
+            android:id="@+id/iv_foto_hospedeiro"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/foto_bg"
+            android:src="@drawable/ic_action_file_cloud_download"/>
+    </FrameLayout>
 
 
-
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white">
-
-
-
-                <TextView
-                    android:id="@+id/profile_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hospedeiro 01"
-                    android:lines="2"
-                    android:textColor="@android:color/secondary_text_light"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_alignTop="@+id/profile_pic"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="true"
-                    android:layout_toLeftOf="@+id/ratingBar"
-                    android:layout_toStartOf="@+id/ratingBar"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_vertical|center_horizontal" />
-
-                <android.support.v4.widget.CircleImageView
-                    android:id="@+id/profile_pic"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="right|center_vertical"
-                    android:visibility="visible"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/accent_material_light"
-                    android:layout_centerVertical="true" />
-
-                <TextView
-                    android:id="@+id/profile_info"
-                    android:layout_width="192dp"
-                    android:layout_height="34dp"
-                    android:text="Informações"
-                    android:layout_gravity="left|bottom"
-                    android:layout_below="@+id/ratingBar"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignRight="@+id/ratingBar"
-                    android:layout_alignEnd="@+id/ratingBar"
-                    android:textStyle="bold"
-                    android:gravity="center" />
-
-                <RatingBar
-                    android:layout_width="137dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ratingBar"
-                    android:layout_gravity="right|center_vertical"
-                    android:numStars="5"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/profile_pic"
-                    android:layout_toStartOf="@+id/profile_pic"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginEnd="25dp" />
-
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:id="@+id/txt_qt"
-                android:textColor="@android:color/secondary_text_light"
-                android:textSize="12sp"
-                android:layout_centerVertical="true" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/tv_nome_hospedeiro" />
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        </RelativeLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp">
 
-    </android.support.v7.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Medium Text"
+                        android:id="@+id/tv_preco_hospedeiro"
+                        android:layout_marginBottom="3dp"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Medium Text"
+                        android:id="@+id/tv_distancia_hospedeiro" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:id="@+id/rbar_rating_hospedeiro"
+                        android:numStars="5"
+                        android:isIndicator="true"
+                        android:layout_gravity="right|center_horizontal"
+                        android:layout_marginBottom="5dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Reservar"
+                        android:id="@+id/btn_reserva_hospedeiro"
+                        android:background="@color/mostarda2"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="right|center_horizontal"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
 
 </LinearLayout>

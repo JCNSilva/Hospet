@@ -45,9 +45,9 @@ public class ProfileRecyclerAdapter extends RecyclerView.Adapter<ProfileRecycler
 
         public ViewHolder(View v) {
             super(v);
-            name = (TextView) v.findViewById(R.id.profile_name);
+            /*name = (TextView) v.findViewById(R.id.profile_name);
             info = (TextView) v.findViewById(R.id.profile_info);
-            pic1 = (ImageView) v.findViewById(R.id.profile_pic);
+            pic1 = (ImageView) v.findViewById(R.id.profile_pic);*/
 
         }
 

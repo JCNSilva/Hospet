@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import br.ufcg.edu.empsoft.hospet.fragments.FilterFragment;
 import br.ufcg.edu.empsoft.hospet.R;
+import br.ufcg.edu.empsoft.hospet.fragments.ListFragment;
 import br.ufcg.edu.empsoft.hospet.fragments.ProfileFragment;
 import br.ufcg.edu.empsoft.hospet.fragments.SignupFragment;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     private SignupFragment signupFragment;
     private FragmentManager fragmentManager;
     private FilterFragment filterFragment;
+    private ListFragment listFragment;
     public static final String PROFILE_TAG = "PROFILE_TAG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +66,13 @@ public class MainActivity extends AppCompatActivity
         profileFragment = new ProfileFragment();
         signupFragment = new SignupFragment();
         filterFragment = new FilterFragment();
+        listFragment = new ListFragment();
 
         //lastFragment = R.id.nav_map;
 
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, filterFragment, PROFILE_TAG);
+        fragmentTransaction.replace(R.id.fragment_container, listFragment, PROFILE_TAG);
         fragmentTransaction.commit();
     }
 
