@@ -86,7 +86,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        MenuItem mSearchMenuItem = menu.findItem(R.id.menuSearch);
+        MenuItem mSearchMenuItem = menu.findItem(R.id.search);
         searchView = (SearchView) mSearchMenuItem.getActionView();
 
 //        searchView.setOnCloseListener(new SearchView.OnCloseListener() {

@@ -19,8 +19,7 @@ import br.ufcg.edu.empsoft.hospet.fragments.ListFragment;
 import br.ufcg.edu.empsoft.hospet.fragments.ProfileFragment;
 import br.ufcg.edu.empsoft.hospet.fragments.SignupFragment;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
     private ProfileFragment profileFragment;
     private SignupFragment signupFragment;
     private FragmentManager fragmentManager;
@@ -31,27 +30,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*//Modifica fonte
-       CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/century-gothic.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );*/
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
         setUpFragments();
 
     }
@@ -78,76 +60,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if (id == 0) {
-            //id = lastFragment;
-        }
-
-        switch (id) {
-            case R.id.nav_camera:
-
-                break;
-            case R.id.nav_gallery:
-                startActivity(new Intent(getApplicationContext(), ProfileScrollingActivity.class));
-                break;
-            case R.id.nav_slideshow:
-                fragmentTransaction.replace(R.id.fragment_container, signupFragment, PROFILE_TAG);
-                fragmentTransaction.commit();
-                break;
-            case R.id.nav_manage:
-                fragmentTransaction.replace(R.id.fragment_container, filterFragment, PROFILE_TAG);
-                fragmentTransaction.commit();
-                break;
-            case R.id.nav_share:
-
-                break;
-            case R.id.nav_send:
-
-                break;
-
-
-            default:
-                break;
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }

@@ -21,8 +21,10 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 import br.ufcg.edu.empsoft.hospet.models.ConstantesFiltro;
 
@@ -46,13 +48,16 @@ public class FilterFragment extends Fragment {
 
     private Calendar dataInicio;
     private Calendar dataFinal;
-    private ConstantesFiltro.TipoAnimal tipoAnimal;
-    private ConstantesFiltro.TipoLocal tipoLocal;
+    private Set<ConstantesFiltro.TipoAnimal> tipoAnimal;
+    private Set<ConstantesFiltro.TipoLocal> tipoLocal;
     private ConstantesFiltro.TipoOrdenacao tipoOrdenacao;
-    private ConstantesFiltro.TipoPagamento tipoPagamento;
+    private Set<ConstantesFiltro.TipoPagamento> tipoPagamento;
 
     public FilterFragment() {
-        // Required empty public constructor
+        tipoAnimal = new HashSet<>();
+        tipoLocal = new HashSet<>();
+        tipoOrdenacao = ConstantesFiltro.TipoOrdenacao.NOTA;
+        tipoPagamento = new HashSet<>();
     }
 
     @Override
@@ -88,47 +93,51 @@ public class FilterFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ctvCachorro.toggle();
-                ctvGato.setChecked(false);
-                ctvAve.setChecked(false);
-                ctvTartaruga.setChecked(false);
-                updateBoxes();
-                tipoAnimal = ConstantesFiltro.TipoAnimal.CACHORRO;
+                updateBox(ctvCachorro);
+                if(ctvCachorro.isChecked()){
+                    tipoAnimal.add(ConstantesFiltro.TipoAnimal.CACHORRO);
+                } else {
+                    tipoAnimal.remove(ConstantesFiltro.TipoAnimal.CACHORRO);
+                }
             }
         });
 
         ctvGato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctvCachorro.setChecked(false);
                 ctvGato.toggle();
-                ctvAve.setChecked(false);
-                ctvTartaruga.setChecked(false);
-                updateBoxes();
-                tipoAnimal = ConstantesFiltro.TipoAnimal.GATO;
+                updateBox(ctvGato);
+                if(ctvGato.isChecked()){
+                    tipoAnimal.add(ConstantesFiltro.TipoAnimal.GATO);
+                } else {
+                    tipoAnimal.remove(ConstantesFiltro.TipoAnimal.GATO);
+                }
             }
         });
 
         ctvAve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctvCachorro.setChecked(false);
-                ctvGato.setChecked(false);
                 ctvAve.toggle();
-                ctvTartaruga.setChecked(false);
-                updateBoxes();
-                tipoAnimal = ConstantesFiltro.TipoAnimal.AVE;
+                updateBox(ctvAve);
+                if(ctvAve.isChecked()){
+                    tipoAnimal.add(ConstantesFiltro.TipoAnimal.AVE);
+                } else {
+                    tipoAnimal.remove(ConstantesFiltro.TipoAnimal.AVE);
+                }
             }
         });
 
         ctvTartaruga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctvCachorro.setChecked(false);
-                ctvGato.setChecked(false);
-                ctvAve.setChecked(false);
                 ctvTartaruga.toggle();
-                updateBoxes();
-                tipoAnimal = ConstantesFiltro.TipoAnimal.TARTARUGA;
+                updateBox(ctvTartaruga);
+                if(ctvTartaruga.isChecked()){
+                    tipoAnimal.add(ConstantesFiltro.TipoAnimal.TARTARUGA);
+                } else {
+                    tipoAnimal.remove(ConstantesFiltro.TipoAnimal.TARTARUGA);
+                }
             }
         });
 
@@ -136,9 +145,12 @@ public class FilterFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ctvCasa.toggle();
-                ctvApartamento.setChecked(false);
-                updateBoxes();
-                tipoLocal = ConstantesFiltro.TipoLocal.CASA;
+                updateBox(ctvCasa);
+                if(ctvCasa.isChecked()){
+                    tipoLocal.add(ConstantesFiltro.TipoLocal.CASA);
+                } else {
+                    tipoLocal.remove(ConstantesFiltro.TipoLocal.CASA);
+                }
             }
         });
 
@@ -147,10 +159,13 @@ public class FilterFragment extends Fragment {
         ctvApartamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctvCasa.setChecked(false);
                 ctvApartamento.toggle();
-                updateBoxes();
-                tipoLocal = ConstantesFiltro.TipoLocal.APARTAMENTO;
+                updateBox(ctvApartamento);
+                if(ctvApartamento.isChecked()){
+                    tipoLocal.add(ConstantesFiltro.TipoLocal.APARTAMENTO);
+                } else {
+                    tipoLocal.remove(ConstantesFiltro.TipoLocal.APARTAMENTO);
+                }
             }
         });
 
@@ -160,11 +175,12 @@ public class FilterFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ctvCredito.toggle();
-                ctvDebito.setChecked(false);
-                ctvPaypal.setChecked(false);
-                ctvDinheiro.setChecked(false);
-                updateBoxes();
-                tipoPagamento = ConstantesFiltro.TipoPagamento.CREDITO;
+                updateBox(ctvCredito);
+                if(ctvCredito.isChecked()){
+                    tipoPagamento.add(ConstantesFiltro.TipoPagamento.CREDITO);
+                } else {
+                    tipoPagamento.remove(ConstantesFiltro.TipoPagamento.CREDITO);
+                }
             }
         });
 
@@ -173,12 +189,13 @@ public class FilterFragment extends Fragment {
         ctvDebito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctvCredito.setChecked(false);
                 ctvDebito.toggle();
-                ctvPaypal.setChecked(false);
-                ctvDinheiro.setChecked(false);
-                updateBoxes();
-                tipoPagamento = ConstantesFiltro.TipoPagamento.DEBITO;
+                updateBox(ctvDebito);
+                if(ctvDebito.isChecked()){
+                    tipoPagamento.add(ConstantesFiltro.TipoPagamento.DEBITO);
+                } else {
+                    tipoPagamento.remove(ConstantesFiltro.TipoPagamento.DEBITO);
+                }
             }
         });
 
@@ -187,12 +204,13 @@ public class FilterFragment extends Fragment {
         ctvPaypal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctvCredito.setChecked(false);
-                ctvDebito.setChecked(false);
                 ctvPaypal.toggle();
-                ctvDinheiro.setChecked(false);
-                updateBoxes();
-                tipoPagamento = ConstantesFiltro.TipoPagamento.PAYPAL;
+                updateBox(ctvPaypal);
+                if(ctvPaypal.isChecked()){
+                    tipoPagamento.add(ConstantesFiltro.TipoPagamento.PAYPAL);
+                } else {
+                    tipoPagamento.remove(ConstantesFiltro.TipoPagamento.PAYPAL);
+                }
             }
         });
 
@@ -201,12 +219,13 @@ public class FilterFragment extends Fragment {
         ctvDinheiro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctvCredito.setChecked(false);
-                ctvDebito.setChecked(false);
-                ctvPaypal.setChecked(false);
                 ctvDinheiro.toggle();
-                updateBoxes();
-                tipoPagamento = ConstantesFiltro.TipoPagamento.DINHEIRO;
+                updateBox(ctvDinheiro);
+                if(ctvDinheiro.isChecked()){
+                    tipoPagamento.add(ConstantesFiltro.TipoPagamento.DINHEIRO);
+                } else {
+                    tipoPagamento.remove(ConstantesFiltro.TipoPagamento.DINHEIRO);
+                }
             }
         });
 
@@ -263,9 +282,9 @@ public class FilterFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filtros.setAdapter(adapter);
 
-        filtros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        filtros.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int index, long l) {
                 switch(index){
                     case 0:
                         tipoOrdenacao = ConstantesFiltro.TipoOrdenacao.NOTA;
@@ -278,11 +297,15 @@ public class FilterFragment extends Fragment {
                         break;
                 }
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
         });
 
         return mView;
     }
-
 
     private void updateLabels() {
         String myFormat = "dd/MM/yyyy";
@@ -291,25 +314,11 @@ public class FilterFragment extends Fragment {
         dFinal.setText(sdf.format(dataFinal.getTime()));
     }
 
-    private void updateBoxes(){
-        List<CheckedTextView> boxes = new ArrayList<>();
-        boxes.add(ctvGato);
-        boxes.add(ctvCachorro);
-        boxes.add(ctvAve);
-        boxes.add(ctvTartaruga);
-        boxes.add(ctvCasa);
-        boxes.add(ctvApartamento);
-        boxes.add(ctvCredito);
-        boxes.add(ctvDebito);
-        boxes.add(ctvDinheiro);
-        boxes.add(ctvPaypal);
-
-        for (CheckedTextView box: boxes) {
-            if(box.isChecked()){
-                box.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.tag_selected));
-            } else {
-                box.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.tag_background));
-            }
+    private void updateBox(CheckedTextView box){
+        if(box.isChecked()){
+            box.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.tag_selected));
+        } else {
+            box.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.tag_background));
         }
     }
 
