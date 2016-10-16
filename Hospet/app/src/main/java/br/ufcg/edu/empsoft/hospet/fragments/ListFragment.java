@@ -63,6 +63,7 @@ public class ListFragment extends Fragment {
                 Calendar.getInstance(), 0, new ArrayList<ConstantesFiltro.TipoAnimal>(),
                 ConstantesFiltro.TipoLocal.CASA, new ArrayList<ConstantesFiltro.TipoPagamento>(), 10.0
         );
+        h8.setNumEstrelas(4.5);
         hospedeiros.add(h1);
         hospedeiros.add(h2);
         hospedeiros.add(h3);
