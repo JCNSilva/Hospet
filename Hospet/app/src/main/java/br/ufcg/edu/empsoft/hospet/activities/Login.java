@@ -34,7 +34,7 @@ public class Login extends Activity {
         Thread thread = new Thread(){
             public void run() {
                 try{
-                    sleep(3300);
+                    sleep(2000);
                 } catch (InterruptedException e){
                     e.printStackTrace();
                 } finally {
