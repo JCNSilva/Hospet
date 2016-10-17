@@ -34,57 +34,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:src="@drawable/ic_card_clock"
+                    android:src="@drawable/love_dog"
                     android:layout_weight="1"/>
-
-                <TableLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:gravity="top|left">
-
-
-                    <TableRow
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_weight="1">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_card_clock"
-                            android:layout_weight="1"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_card_clock"
-                            android:layout_weight="1"/>
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_weight="1">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_card_clock"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_card_clock"
-                            android:layout_weight="1" />
-                    </TableRow>
-                </TableLayout>
-
-
 
             </LinearLayout>
 
@@ -100,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email"
+        android:src="@drawable/ic_menu_send"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end" />
 

@@ -1,6 +1,7 @@
 package br.ufcg.edu.empsoft.hospet.fragments;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.DatePicker;
 import android.widget.Spinner;
@@ -26,6 +28,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import br.ufcg.edu.empsoft.hospet.activities.MainActivity;
 import br.ufcg.edu.empsoft.hospet.models.ConstantesFiltro;
 
 import br.ufcg.edu.empsoft.hospet.R;
@@ -45,6 +48,7 @@ public class FilterFragment extends Fragment {
     private CheckedTextView ctvDebito;
     private CheckedTextView ctvPaypal;
     private Spinner filtros;
+    private Button botao_filtrar;
 
     private Calendar dataInicio;
     private Calendar dataFinal;
@@ -69,7 +73,7 @@ public class FilterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View mView = inflater.inflate(R.layout.fragment_filter, container, false);
+        final View mView = inflater.inflate(R.layout.fragment_filter, container, false);
         dInicio = (TextView) mView.findViewById(R.id.et_data_inicio);
         dFinal = (TextView) mView.findViewById(R.id.et_data_final);
         ctvGato = (CheckedTextView) mView.findViewById(R.id.ctv_gato);
@@ -83,6 +87,7 @@ public class FilterFragment extends Fragment {
         ctvDinheiro = (CheckedTextView) mView.findViewById(R.id.ctv_dinheiro);
         ctvPaypal = (CheckedTextView) mView.findViewById(R.id.ctv_paypal);
         filtros = (Spinner) mView.findViewById(R.id.spinner_filtros);
+        botao_filtrar = (Button) mView.findViewById(R.id.botao_filtrar);
 
         dataInicio = Calendar.getInstance();
         dataFinal = Calendar.getInstance();
@@ -282,6 +287,14 @@ public class FilterFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filtros.setAdapter(adapter);
 
+        botao_filtrar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mView.getContext(), MainActivity.class));
+            }
+        });
+
         filtros.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int index, long l) {
@@ -346,4 +359,8 @@ public class FilterFragment extends Fragment {
         drawable = scaleImage(drawable, 0.5);
         tv.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
     }
+
+
+
+
 }
