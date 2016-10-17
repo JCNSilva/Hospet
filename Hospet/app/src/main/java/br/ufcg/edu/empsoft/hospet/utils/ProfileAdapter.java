@@ -9,12 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import br.ufcg.edu.empsoft.hospet.R;
+import br.ufcg.edu.empsoft.hospet.activities.MainActivity;
 import br.ufcg.edu.empsoft.hospet.models.Profile;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +79,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
                 }
             }
         });
+
+
     }
 
 
@@ -107,6 +111,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
         private TextView nome;
         private TextView preco;
         private TextView data;
+        private Button reservar;
 
 
         private RelativeLayout llExpandArea;
@@ -118,6 +123,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
             data = (TextView) itemView.findViewById(R.id.data);
             llExpandArea = (RelativeLayout) itemView.findViewById(R.id.llExpandArea);
             expandButton = (ToggleButton) itemView.findViewById(R.id.expand_bt);
+            reservar = (Button) itemView.findViewById(R.id.btn_reserva_hospedeiro);
         }
     }
 }

@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
 
 import br.ufcg.edu.empsoft.hospet.fragments.FilterFragment;
 import br.ufcg.edu.empsoft.hospet.R;
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         setUpFragments();
+
+
 
     }
 

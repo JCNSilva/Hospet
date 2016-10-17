@@ -41,12 +41,12 @@ public class Login extends Activity {
 
         Thread thread = new Thread(){
             public void run() {
-                try{
+                try{startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     sleep(2000);
                 } catch (InterruptedException e){
                     e.printStackTrace();
                 } finally {
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
                     finish();
                 }
             }

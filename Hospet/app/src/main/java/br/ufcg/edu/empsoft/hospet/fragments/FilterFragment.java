@@ -359,8 +359,4 @@ public class FilterFragment extends Fragment {
         drawable = scaleImage(drawable, 0.5);
         tv.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
     }
-
-
-
-
 }
