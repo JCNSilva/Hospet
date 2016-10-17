@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
+import java.util.Random;
+
 import br.ufcg.edu.empsoft.hospet.R;
 
 /**
@@ -24,7 +26,13 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         rl = (RelativeLayout)findViewById(R.id.RelativeLayout1);
-        rl.setBackgroundResource(R.drawable.login_cat);
+
+        if ((new Random().nextInt(2))==1){
+            rl.setBackgroundResource(R.drawable.login_dog);
+        } else {
+            rl.setBackgroundResource(R.drawable.login_cat);
+        }
+
         linlaHeaderProgress = (LinearLayout) findViewById(R.id.progress_layout);
         linlaHeaderProgress.setVisibility(View.VISIBLE);
 
@@ -39,6 +47,7 @@ public class Login extends Activity {
                     e.printStackTrace();
                 } finally {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
                 }
             }
         };
